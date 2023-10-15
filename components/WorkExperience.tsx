@@ -25,15 +25,15 @@ const experience: Array<Experience> = [
     id: 1,
     company: "Freelance",
     position: "Full stack developer",
-    timeRange: "2019 - Now",
+    timeRange: "2019 - now",
   },
 ];
 
 export default function WorkExperience() {
   return (
-    <div className="flex flex-col space-y-4 md:space-y-6 w-full mt-4 md:mt-6 lg:mt-10 p-4 md:p-6 lg:p-10">
+    <div className="flex flex-col space-y-4 md:space-y-6 w-full max-w-md mt-4 md:mt-6 lg:mt-10">
       <div className="w-full flex items-center font-bold">
-        <FaBriefcase className="mr-2" /> Work Experience
+        <FaBriefcase className="mr-2" />Work experience
       </div>
       {experience.map((exp) => (
         <WorkPosition
