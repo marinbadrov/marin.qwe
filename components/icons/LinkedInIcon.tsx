@@ -4,7 +4,9 @@ import IconWrapper from "./IconWrapper";
 export default function LinkedInIcon() {
   return (
     <IconWrapper>
-      <FaLinkedin size={20} />
+      <a href="https://www.linkedin.com/in/marin-badrov/" target="_blank">
+        <FaLinkedin size={20} />
+      </a>
     </IconWrapper>
   );
 }

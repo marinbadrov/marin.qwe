@@ -4,7 +4,9 @@ import IconWrapper from "./IconWrapper";
 export default function EmailIcon() {
   return (
     <IconWrapper>
-      <FaEnvelope size={20} />
+      <a href="mailto:marin.badrov.dev@gmail.com">
+        <FaEnvelope size={20} />
+      </a>
     </IconWrapper>
   );
 }

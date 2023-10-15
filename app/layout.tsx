@@ -2,14 +2,14 @@ import "./globals.css";
 import { IBM_Plex_Mono, Montserrat } from "next/font/google";
 import { Header, Navbar } from "@/components";
 
-const ubuntu = Montserrat({
+const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-montserrat",
   weight: ["400", "500", "700"],
 });
 
-const ubuntu_mono = IBM_Plex_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-ibm-plex-mono",
@@ -27,14 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${ubuntu.variable} ${ubuntu_mono.variable}`}>
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${ibmPlexMono.variable}`}
+    >
       <head>
         <link rel="icon" sizes="any" href="/favicon.ico" />
       </head>
-      <body
-        className={`bg-background text-text font-sans`}
-      >
-        <Header />
+      <body className="bg-background text-text font-sans">
         <Navbar />
         {children}
       </body>
