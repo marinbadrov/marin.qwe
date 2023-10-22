@@ -1,6 +1,6 @@
 import "./globals.css";
 import { IBM_Plex_Mono, Montserrat } from "next/font/google";
-import { Header, Navbar } from "@/components";
+import { Navbar } from "@/components";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -34,7 +34,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" sizes="any" href="/favicon.ico" />
       </head>
-      <body className="bg-background text-black font-sans">
+      <body className="bg-background text-black font-sans pb-6 md:pb-8 lg:pb-10">
         <Navbar />
         {children}
       </body>

@@ -2,7 +2,7 @@ import { EmailIcon, GithubIcon, LinkedInIcon } from "./icons";
 
 export default function MyLinks() {
   return (
-    <div className="h-full flex justify-between w-32">
+    <div className="h-full flex space-x-4">
       <GithubIcon />
       <LinkedInIcon />
       <EmailIcon />

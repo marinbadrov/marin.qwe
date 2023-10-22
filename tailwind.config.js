@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,29 +9,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "text": "#004643",
+        "accent": "#004643",
         "background": "#FFFFFF",
         "primary": "#F9BC60",
-        "secondary": "#D35400",
-        "accent": "#D7FF28",
-        "nav-bg": "#ABD1C6",
+        "secondary": "#ABD1C6",
       },
       fontFamily: {
         sans: ["var(--font-montserrat)"],
         mono: ["var(--font-ibm-plex-mono)"],
       },
+      textShadow: {
+        sm: "0 1px 2px var(--tw-shadow-color)",
+        DEFAULT: "2px 3px var(--tw-shadow-color)",
+      },
+      boxShadow: {
+        DEFAULT: "4px 4px 0px 0px rgba(0,0,0,1)",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") },
+      );
+    }),
+  ],
 };
 
-/*
-#FAEEE7
-#FFC6C7
-#FF8BA7
-
-#D7FF28 | #FFC0AD | #E78FB3
-
-#FFFFFF | #67568C | #FF6E6C
-
-*/
